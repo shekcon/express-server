@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS users (
     id          SERIAL  PRIMARY KEY,
     username    text    NOT NULL    UNIQUE,
     hashpass    text    NOT NULL,
-    admin       text NOT NULL DEFAULT 'user'
+    role       text NOT NULL DEFAULT 'user'
 );

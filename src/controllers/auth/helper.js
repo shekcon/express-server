@@ -43,7 +43,7 @@ const validateUser = async (username, password) => {
   };
 };
 
-const createUser = async (username, password, location, admin = false) => {
+const createUser = async (username, password, role = 'user') => {
   // generate hashpassword
   const salt = bcrypt.genSaltSync(10);
   const hashpass = bcrypt.hashSync(password, salt);
@@ -51,8 +51,8 @@ const createUser = async (username, password, location, admin = false) => {
   // define query for create new user
   const query =
     "INSERT INTO users (username, hashpass, role)\
-                    VALUES ($1, $2, $3, $4) RETURNING *";
-  await db.query(query, [username, hashpass, location, admin]);
+                    VALUES ($1, $2, $3) RETURNING *";
+  await db.query(query, [username, hashpass, role]);
 };
 
 module.exports = {

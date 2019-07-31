@@ -2,9 +2,9 @@
 const {createUser} = require('./helper');
 
 const signUp = async (req, res) => {
-    const {username, password, location} = req.body;
+    const {username, password} = req.body;
 
-    if (!username|| !password || !location) {
+    if (!username|| !password) {
         return res.status(400).send({
             success: false,
             message: 'Please fill in required space.'
@@ -19,7 +19,7 @@ const signUp = async (req, res) => {
     }
     
     try {
-        await createUser(username, password, location);
+        await createUser(username, password);
         return res.status(201).send({
             success: true,
             message: "Create a new user successfully"

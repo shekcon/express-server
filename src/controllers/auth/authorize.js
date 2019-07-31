@@ -23,8 +23,8 @@ const messages = {
 
 
 const authorize = async (req, res, next) => {
-    const token = req.headers['Authorization'];
-    if (!token && !token.startswith("Bearer ")) {
+    const token = req.headers['Authorization'] || req.headers['authorization'];
+    if (!token || !token.startsWith("Bearer ")) {
         return res.status(401).send(messages[401]);
     }
     try {
