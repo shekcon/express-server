@@ -1,0 +1,10 @@
+{
+    "db_config":{
+        "user": "postgres",
+        "host": "localhost",
+        "port": 5432,
+        "database": "rest_ex_jwt",
+        "password": "123456"
+    },
+    "secretkey": "@@20191997&jwt&lqsang&lhbao&express@@"
+}

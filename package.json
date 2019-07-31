@@ -1,0 +1,31 @@
+{
+  "name": "customer_rating",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "pretest": "export NODE_ENV=test && node test/pretest_config.js",
+    "test": "export NODE_ENV=test && mocha test/vendors/*.js test/admin/*.js  --exit"
+  },
+  "author": "shekcon",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.13.2",
+    "cluster": "^0.7.7",
+    "config": "^3.1.0",
+    "cors": "^2.8.5",
+    "enquirer": "^2.3.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.11.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
+  }
+}

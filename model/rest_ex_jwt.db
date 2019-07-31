@@ -1,0 +1,16 @@
+-- Usage: psql -U user_name < path_of_db_file
+
+DROP DATABASE rest_ex_jwt;
+-- Create database
+CREATE DATABASE rest_ex_jwt ENCODING  "utf8" TEMPLATE template1;
+
+-- Connect to database
+\c rest_ex_jwt
+
+-- Declare construct tables
+CREATE TABLE IF NOT EXISTS users (
+    id          SERIAL  PRIMARY KEY,
+    username    text    NOT NULL    UNIQUE,
+    hashpass    text    NOT NULL,
+    admin       text NOT NULL DEFAULT 'user'
+);
